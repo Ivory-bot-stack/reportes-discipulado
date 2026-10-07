@@ -48,6 +48,7 @@ export default async function DetalleReporte({ params }) {
       <div className="sec"><h2>Tema impartido</h2><p style={{ margin: 0 }}>{r.tema || '—'}</p></div>
       <div className="sec"><h2>Seguimiento</h2><p style={{ margin: 0 }}>{r.seguimiento || '—'}</p></div>
       <div className="sec"><h2>Observaciones</h2><p style={{ margin: 0 }}>{r.observaciones || '—'}</p></div>
+      <div className="sec"><h2>Testimonios</h2><p style={{ margin: 0, whiteSpace: 'pre-wrap' }}>{r.testimonios || '—'}</p></div>
       <div className="sec"><h2>Fotos</h2><Fotos reporteId={r.id} inicial={fotos} /></div>
     </>
   );

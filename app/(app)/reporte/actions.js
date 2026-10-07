@@ -11,7 +11,7 @@ export async function guardarBorrador(id, d) {
   const { data, error } = await supabase.from('reportes').update({
     mentor_asistio: !!d.mentor_asistio,
     ofrenda: numero(d.ofrenda), diezmos: numero(d.diezmos),
-    tema: d.tema ?? '', seguimiento: d.seguimiento ?? '', observaciones: d.observaciones ?? '',
+    tema: d.tema ?? '', seguimiento: d.seguimiento ?? '', testimonios: d.testimonios ?? '', observaciones: d.observaciones ?? '',
   }).eq('id', id).select('id');
   if (error) return { error: error.message };
   if (!data?.length) return { error: 'Este reporte ya no se puede modificar.' };

@@ -17,7 +17,7 @@ export default function Formulario({ reporte, asistencias, fotos }) {
   const [asis, setAsis] = useState(Object.fromEntries(asistencias.map((a) => [a.id, a.asistio])));
   const [c, setC] = useState({
     ofrenda: Number(reporte.ofrenda) || '', diezmos: Number(reporte.diezmos) || '',
-    tema: reporte.tema, seguimiento: reporte.seguimiento, observaciones: reporte.observaciones,
+    tema: reporte.tema, seguimiento: reporte.seguimiento, testimonios: reporte.testimonios ?? '', observaciones: reporte.observaciones,
   });
   const [error, setError] = useState('');
   const [nota, setNota] = useState('');
@@ -86,6 +86,8 @@ export default function Formulario({ reporte, asistencias, fotos }) {
         <textarea id="se" placeholder="Nombre y motivo" value={c.seguimiento} onChange={cambiar('seguimiento')} /></div>
       <div className="sec"><h2>Observaciones</h2>
         <textarea placeholder="Algo más que el pastor deba saber" value={c.observaciones} onChange={cambiar('observaciones')} aria-label="Observaciones" /></div>
+      <div className="sec"><h2>Testimonios</h2>
+        <textarea placeholder="Cuenta lo que Dios hizo en tu grupo esta semana" value={c.testimonios} onChange={cambiar('testimonios')} aria-label="Testimonios" /></div>
       <div className="sec"><h2>Fotos</h2><Fotos reporteId={reporte.id} inicial={fotos} editable /></div>
       {error && <div className="err" role="alert">{error}</div>}
       <button className="btn gold" onClick={revisar}>Enviar reporte</button>
