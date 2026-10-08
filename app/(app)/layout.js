@@ -3,6 +3,7 @@ import { crearClienteServidor } from '@/lib/supabase/server';
 import { salir } from '../actions-auth';
 import ThemeToggle from '@/components/ThemeToggle';
 import Tabs from '@/components/Tabs';
+import AdminTabs from '@/components/AdminTabs';
 
 export const dynamic = 'force-dynamic';
 
@@ -21,7 +22,7 @@ export default async function LayoutPrivado({ children }) {
         <form action={salir}><button className="salir">Salir</button></form>
       </div></header>
       <div className="wrap">
-        {perfil.rol !== 'ADMIN' && <Tabs />}
+        {perfil.rol === 'ADMIN' ? <AdminTabs /> : <Tabs />}
         {children}
       </div>
     </>

@@ -17,7 +17,7 @@ export default async function PaginaReporte() {
 
   const { data: r } = await supabase.from('reportes').select('*').eq('id', id).single();
   const { data: filas } = await supabase.from('asistencias').select('id, asistio, personas(nombre, tipo)').eq('reporte_id', id);
-  const asistencias = (filas || []).sort((a, b) => a.personas.nombre.localeCompare(b.personas.nombre));
+  const asistencias = (filas || []).filter((a) => a.personas).sort((a, b) => a.personas.nombre.localeCompare(b.personas.nombre));
   const fotos = await cargarFotos(supabase, id);
   const semana = etiquetaSemana(r.semana_inicio);
   const nombre = perfil.nombre.split(' ')[0];

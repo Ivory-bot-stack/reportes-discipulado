@@ -1,0 +1,10 @@
+select{width:100%;padding:14px;border:1.5px solid var(--line);border-radius:12px;background:var(--card);color:var(--ink);font:inherit}
+.tabs.adm{overflow-x:auto}.tabs.adm a{flex:none;padding:12px 16px}
+.aviso.ok{background:color-mix(in srgb,var(--ok) 16%,transparent);color:var(--ok)}
+details.sec summary{font-weight:700;color:var(--blue);cursor:pointer;font-size:18px}
+.fila-edit{display:grid;gap:8px;margin-top:10px}
+.acciones{display:flex;gap:8px;align-items:center;flex-wrap:wrap;margin-top:10px}
+.acciones form{margin:0}
+.btn.peq{width:auto;margin:0;padding:10px 16px;font-size:15px}
+.filtros{display:grid;grid-template-columns:1fr 1fr;gap:8px}
+.inactivo{opacity:.6}
